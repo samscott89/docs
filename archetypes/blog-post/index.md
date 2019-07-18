@@ -1,7 +1,6 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
-publishDate: {{ .Date }}
 draft: true
 meta_image: meta.png
 authors:
