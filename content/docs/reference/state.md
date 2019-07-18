@@ -8,14 +8,19 @@ menu:
 ---
 
 Pulumi stores its own copy of the current state of your infrastructure. This is often simply called _state_, and is
-stored in transactional snapshots we call _checkpoints_. A checkpoint is recorded by Pulumi at various points so that
-it can operate reliably, whether that means diffing goal state versus current state during an update, recovering from
-failure, or destroying resources accurately to clean up afterwards, for example. Because state is critical to how Pulumi
+stored in transactional snapshots we call _checkpoints_. A _checkpoint_ is recorded by Pulumi at various points so that
+it can operate reliably &mdash; whether that means diffing goal state versus current state during an update, recovering from
+failure, or destroying resources accurately to clean up afterwards. Because state is critical to how Pulumi
 operates, this page gives an overview of the options.
 
 ## Backends
 
-Pulumi supports multiple so-called _backends_ for storing this state. There are two primary kinds:
+Pulumi supports multiple so-called _backends_ for storing this state.
+| Backend | Description | Setup |
+|---------|-------------|-------|
+| `pulumi.com` | Accessed by the CLI through REST API calls | No additional
+configuration after [installing Pulumi](
+| Self-managed | Stored locally on your computer's filesystem, or remotely using a cloud provider |  
 
 1. **Web**: a backend accessed by the CLI through REST API calls
 2. **Filesystem**: a backend stored locally on your computer's filesystem
